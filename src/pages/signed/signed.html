@@ -1,0 +1,97 @@
+<!--
+  Generated template for the Signed page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <span style="font-size:24px">&nbsp;&nbsp;&nbsp;Home</span>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div style="background-color:#3578e9">
+    <ion-grid>
+      <ion-row>
+        <button ion-button icon-only color="light" block clear large (click)="To_Recommend()">
+          <ion-icon name="pin"></ion-icon>
+        </button>
+        <button ion-button icon-only color="light" block clear large (click)="scanQR()">
+          <ion-icon name="logo-usd"></ion-icon>
+         </button>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-label *ngIf="isLoading">
+      Loading products...
+    </ion-label>
+    <h2 style="text-align:center;color: #3578e9;font-size: 7vw;">Product List</h2>
+    <ion-card *ngFor="let product of products" (click)="clickProduct(product)">
+	  <img src="assets/img/signedpage2.png"/>
+	  <div>
+		<h3 style="position: absolute;color: #3578e9;text-align: center;font-size: 5vw;top:15%;width:100%;"> {{orderFormat(product.product_name)}} </h3>
+	  </div>
+	  <div class ="card-c" style="margin-top: 7vw;">
+	    <h3 style="font-size: 4vw;"><b>Product ID: </b> {{product.product_id}} </h3>
+		<h3 style="font-size: 4vw;"><b>Purchase Entry: </b> {{product.purchase_entry}}</h3>
+        <h3 style="font-size: 4vw;"><b>Hold Time: </b> {{product.hold_time}}</h3>
+        <h3 style="font-size: 4vw;color: red"><b> Earning Rate: </b> {{product.earning_rate}}</h3>
+        <h3 style="font-size: 4vw;"><b>Risk Type: </b> {{product.risk_type}}</h3>
+	  </div>
+    </ion-card>
+
+     <button ion-button (click)="refreshProducts()" full>Refresh</button> 
+
+  </div>
+<!-- 
+      <div style="background-color:#3578e9">
+    <ion-list no-lines style="background-color:#3578e9">
+      <ion-item style="background-color:#3578e9">
+        <h1 style="color: whitesmoke">Today's shop</h1>
+      </ion-item>
+        <ion-toolbar>
+          <ion-searchbar>
+          </ion-searchbar>
+        <ion-buttons start>
+            <button ion-button color="royal">
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Send To...</ion-title>
+        <ion-buttons end>
+            <button ion-button color="royal">
+                <ion-icon name="person-add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+    </ion-list>
+
+    <ion-label *ngIf="isLoading">
+      Loading products...
+    </ion-label>
+
+    <ion-card *ngFor="let shop of shops" (click)="clickMerchant(shop)">
+      <ion-card-header>
+        {{privilege.privilege_name}}
+      {{shop}}
+       </ion-card-header>
+      <ion-card-content>
+        ion-list
+          <ion-item>
+            <ion-label>Merchant ID: {{shop}}</ion-label>
+          </ion-item>
+      </ion-list
+      </ion-card-content>
+    </ion-card>
+
+    <button ion-button (click)="refreshProducts()" full>refresh list</button>
+
+  </div> -->
+
+</ion-content>
+

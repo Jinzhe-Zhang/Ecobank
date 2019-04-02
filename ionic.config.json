@@ -1,0 +1,7 @@
+{
+  "name": "EcoBank",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

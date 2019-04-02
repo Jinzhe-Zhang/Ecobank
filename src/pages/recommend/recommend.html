@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <span style="font-size:24px">Recommendation</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div style="background-color:#3578e9">
+    <ion-list padding>
+      <ion-item>
+		  <ion-label>Key</ion-label>
+		  <ion-select [(ngModel)]="key" (ngModelChange)="searchAround()" type="string">
+			<ion-option value="Food">Food</ion-option>
+			<ion-option value="Shopping">Shopping</ion-option>
+			<ion-option value="Recreation">Recreation</ion-option> <!-- 直接搜entertainment 效果不好-->
+		  </ion-select>
+	  </ion-item>
+    </ion-list>
+  </div>
+
+	<ion-card *ngFor="let srt of result;let i = index" (click)="showDetail(i)" style="position:relative">
+	<div style="float:left;width:125px;height:125px;">
+	<img src={{photosrcs[i]}} style="
+    width: auto;    min-height: 100%;
+    width: 100%;"/>
+	</div>
+    <h2 style="margin-left:130px"><b>{{name_Format(srt.MerchantBase.name)}}</b> </h2>
+	  <h3 style="color:blue;margin-left:130px"><b>Type: </b>{{type_Format(srt.MerchantBase.type)}} </h3>
+	  <h3 style="margin-left:130px"><b>Address: </b>{{srt.MerchantBase.address}} </h3>
+	</ion-card>
+
+
+    <ion-card *ngFor="let srt of around_result;let i = index" (click)="showDetail(i)">
+	  <div style="float:left;width:125px;height:125px">
+		<img src={{photosrcs[i]}} style="
+    width: auto;    min-height: 100%;
+    width: 100%;" />
+	  </div>
+      <h2 style="margin-left:130px"><b>{{srt.MerchantBase.name}}</b></h2>
+	  <h3 style="margin-left:130px"><b>Address: </b>{{srt.MerchantBase.address}} </h3>
+	  <!--<h3 style="margin-left:130px"><b>Distance: </b></h3>-->
+	  <h3 style="color:darkgrey;margin-left:130px;position:absolute;bottom:0px;right:0px">{{srt.MerchantBase.distance}}m</h3>
+    </ion-card>
+
+  <h1 style="color:red" *ngIf="resultnum==0">
+     No merchant!
+  </h1>
+
+</ion-content>

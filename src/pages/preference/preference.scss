@@ -1,0 +1,63 @@
+page-preference {
+.name{
+    margin-top:1.33vw;
+    padding-top:1.33vw;
+    overflow: hidden;
+    position: absolute; 
+    left: 20vw;
+    width: 63vw;
+    height: 16  vw;
+    font-weight: bold;
+     text-overflow: ellipsis;
+}
+    .pre{
+         height:17vw;
+         overflow: hidden;
+    }
+.deploy{
+    height: 27vw;
+        animation: dploy 0.32s ease-out;
+}
+.deployname{
+         white-space: normal;
+         display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+line-height: 18px;
+}
+.fold{
+    animation: fod 0.32s ease-out;
+}
+.foldname{
+     white-space: nowrap;
+}
+.folddate{position: absolute;
+    top: 9.7vw;
+    left: 20vw;
+}
+@keyframes dploy
+{
+    from {
+        height: 17vw; 
+    }
+    93.75%{
+
+    }
+    to{/* 
+        height: 27vw; */
+    }
+}
+@keyframes fod{
+    from {/* 
+        height: 27vw;  */    }
+        93.75%{
+        height: 17vw;
+
+        }
+    to{
+        height: 17vw;
+
+    }
+
+}
+}

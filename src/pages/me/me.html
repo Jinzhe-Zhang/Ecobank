@@ -1,0 +1,148 @@
+<ion-header>
+
+  <ion-navbar>
+    <span style="font-size:24px">&nbsp;&nbsp;&nbsp;Me</span>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div style="background-color:#3578e9" (click)="getBalance()">
+    <ion-list no-lines style="background-color:#3578e9">
+              <ion-item style="background-color:#3578e9"><br>
+      <h1 style="color: whitesmoke;" >&nbsp;&nbsp;&nbsp;{{greeting}}, </h1><h1 style="color: whitesmoke;" >&nbsp;&nbsp;&nbsp;{{username}}! </h1>
+      </ion-item>
+      <ion-item style="background-color:#3578e9;margin-bottom: -10px;">
+        <h2 style="color: whitesmoke">&nbsp;&nbsp;Total Asset:&nbsp;&nbsp;&nbsp;&nbsp;{{asset}}</h2>
+      </ion-item>
+      <ion-item style="background-color:#3578e9;margin-bottom: -10px;">
+        <h2 style="color: whitesmoke">&nbsp;&nbsp;Deposit:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  {{deposit}}</h2>
+      </ion-item>
+      <ion-item style="background-color:#3578e9;margin-bottom: -10px;">
+        <h2 style="color: whitesmoke">&nbsp;&nbsp;Overdraft:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{overdraft}}</h2>
+      </ion-item><br>
+    </ion-list>
+  </div>
+
+
+
+  <ion-list> 
+    <div>
+      <ion-icon name="arrow-dropdown" id="cardlisticond" style="position: absolute;z-index:5;margin-left:13px;width:50px;margin-top:10px;" (click)="cardli()"></ion-icon>
+      <ion-icon name="arrow-dropright" id="cardlisticonr" style="position: absolute;z-index:5;margin-left:15px;width:50px;margin-top:10px;opacity:0;" (click)="cardli()"></ion-icon>
+      <ion-list-header style="margin-bottom: 0;padding-left: 35px;"  (click)="cardli()"> <ion-label>Card:</ion-label>
+      </ion-list-header>
+      
+    </div>
+      <div id="cardlist-deploy">
+	  <ion-card *ngFor="let myCard of cards" style="background-color: #F4F4EC;margin-top:0;margin-bottom:0;">
+		<div *ngIf="myCard.bank == 'Orange'" (click)="deleteCard(myCard.card_num)">
+			<div style="float:left">
+			  <ion-img src="assets/img/orange.jpg" height="70" width="70"></ion-img>
+			</div>
+			<div style="text-align:center">
+				<h3 style="padding-top:15px">ORANGE BANK</h3>
+				<h3>{{star_format(myCard.card_num)}}</h3>
+			</div>
+		</div>
+      </ion-card>
+	  <ion-card *ngFor="let myCard of cards" style="background-color: #332B20;margin-top:0;margin-bottom:0;">
+		<div *ngIf="myCard.bank == 'Coconut'" (click)="deleteCard(myCard.card_num)">
+			<div style="float:left">
+			  <ion-img src="assets/img/coconut.jpg" height="70" width="70"></ion-img>
+			</div>
+			<div style="text-align:center">
+			  <h3 style="color: #fafafa;padding-top: 15px">COCONUT BANK</h3>
+			  <h3 style="color: #fafafa">{{star_format(myCard.card_num)}}</h3>
+			</div>
+		</div>
+	  </ion-card>
+  </div>
+  </ion-list>
+
+<!--   
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Card:</ion-label>
+    </ion-list-header>
+    <ion-item-sliding *ngFor="let card of cards" style="background-color: #332B20;margin-top:0;margin-bottom:0">
+
+	  <div *ngIf="card.bank == 'Coconut'" >
+        <div style="float:left">
+          <ion-img src="../../assets/img/coconut.jpg" height="70" width="70"></ion-img>
+		</div>
+		<div style="text-align:center">
+		  <h3 style="color: #fafafa;padding-top: 15px">COCONUT BANK</h3>
+          <h3 style="color: #fafafa">{{Card.card_num}}</h3>
+		</div>
+      </div>
+
+      <ion-item-options>
+        <button ion-button (click)="deleteCard(card.card_num)" color="danger" ><ion-icon name="trash"></ion-icon>Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+   -->
+
+  <ion-list>
+    <div>
+      <ion-icon name="arrow-dropdown" id="productlisticond" style="position: absolute;z-index:5;margin-left:13px;width:50px;margin-top:10px;" (click)="productli()"></ion-icon>
+      <ion-icon name="arrow-dropright" id="productlisticonr" style="position: absolute;z-index:5;margin-left:15px;width:50px;margin-top:10px;opacity:0;" (click)="productli()"></ion-icon>
+    <ion-list-header style="margin-bottom: 0;padding-left: 35px;"  (click)="productli()">
+      <ion-label>Products:</ion-label>
+    </ion-list-header>
+    </div>
+      <div id="productlist-deploy">
+    <ion-item-sliding *ngFor="let order of orders">
+      <ion-item style="padding-right:20vw ;">
+        {{order.held_product_id}} Amount:{{order.held_investment}}
+        <button ion-button color="danger" style="position:absolute;right: 5vw;top:50%;margin-top: -12.5px;" (click)="deleteOrder(order.id)"><ion-icon name="trash"></ion-icon>Delete</button>
+      </ion-item>
+    </ion-item-sliding>
+      </div>
+  </ion-list>
+
+
+
+
+
+  <ion-list>
+    <div>
+      <ion-icon name="arrow-dropdown" id="myactivitieslisticond" style="position: absolute;z-index:5;margin-left:13px;width:50px;margin-top:10px;" (click)="myactivitiesli()"></ion-icon>
+      <ion-icon name="arrow-dropright" id="myactivitieslisticonr" style="position: absolute;z-index:5;margin-left:15px;width:50px;margin-top:10px;opacity:0;" (click)="myactivitiesli()"></ion-icon>
+    <ion-list-header style="margin-bottom: 0;padding-left: 35px;"  (click)="myactivitiesli()">
+      <ion-label>My activities:</ion-label>
+    </ion-list-header>
+    </div>
+      <div id="myactivitieslist-deploy" class="myactivitieslist" *ngFor="let activity of activities"><!-- 
+    <ion-item-sliding> -->
+      <ion-item class="actvity">
+        {{activity.Name}} 
+      </ion-item>
+      <ion-item class="process">
+       <h6>Stoppingtime: {{activity.Stoppingtime}} </h6>
+       <div class="processcontainer"><div></div></div>
+      </ion-item>
+
+      <ion-item style="color: gray;" class="discription">
+          <p style="white-space: normal;text-align: justify">{{activity.description}}</p>
+      </ion-item><!-- 
+    </ion-item-sliding> -->
+      </div>
+  </ion-list>
+
+
+
+
+
+
+
+
+
+
+  <div style="margin: 0 15px 0 15px">
+	<button ion-button (click)="manageCard()" full>Add Card</button>
+	<button ion-button  color="danger" (click)="logOut()" full>Log Out</button>
+  </div>
+  <!-- <button ion-button (click)="aaa()">这是一个测试按钮</button> -->
+</ion-content>

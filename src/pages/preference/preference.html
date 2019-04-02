@@ -1,0 +1,34 @@
+<!--
+  Generated template for the PreferencePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <span style="font-size:24px">&nbsp;&nbsp;&nbsp;Preference</span>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+        <ion-card *ngFor="let pri of activities;let i = index ;" (click)="showDetail(i)" >
+            <div class="pre">
+    <div style="float:left;width:16.7vw;height:13.3vw;margin: 1.9vw 2.7vw 1.9vw 1.3vw;padding-right:2.7vw;border-right: 0.3vw dotted #aaaaaa">
+    <img src={{pri.imgurl}} style="
+    width: 100%;"/>
+    </div>
+    <h2 class="name foldname">{{pri.Name}}  </h2><!-- 
+      <h3><b>Minimum value:  </b>{{pri.costTransaction}}  </h3>
+            <h3 style="color:gray;font-size: 8px ;padding:0 10px;">{{pri.Description}}  </h3>
+                 -->
+      <h3 class="folddate"><b>due date:  </b>{{getdate(pri.Stoppingtime)}}  </h3>
+      <div style="width:90% ;margin:17.3vw 5% 0 5%; padding-top:3vw;border-top: 1px solid gray;">
+          {{pri.description}}
+      </div>
+      <a style="float: right; margin-right: 5vw; margin-top:5px;" (click)="To_ActivityPage()" >Details</a>
+      <h4 style="width:60vw; margin-top:9px; font-size: 6px;margin-left: 5vw;margin-right: 0;">{{getdate(pri.Startingtime)}} ~ {{getdate(pri.Stoppingtime)}}</h4>
+        </div>
+        </ion-card>
+</ion-content>

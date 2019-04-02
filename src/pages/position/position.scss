@@ -1,0 +1,128 @@
+page-position {
+   ion-content>div.scroll-content{
+    overflow: hidden;
+    } 
+   ion-scroll{
+    overflow-y: scroll;
+    } 
+    #h{
+        position: absolute;
+        color: red;
+        margin-top: 0;
+        left: 50%;
+        margin-left: -106px;
+    }
+        #btm{
+            position: absolute;
+            height: 50%;
+            width: 100%;
+            top: 95%;
+            z-index: 1100;
+            background-color:white;
+        }
+        #btm1{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            height: 9% ;
+            background-color:#387ef5;
+        }
+        #btm2{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            width: 5vh;
+            left: 50%;
+            margin-left: -2.5vh;
+        }}
+        img{
+            height: 100%;
+            width: 100%;
+        }
+.amap-info-content{
+    border-radius: 12px;
+    border-width: 0;
+}
+.amap-info > div > div {
+    animation: appear 2s;
+    animation-direction:alternate;
+    -webkit-animation: appear 2s;
+    opacity: 0;
+    z-index: 0;
+}
+@keyframes appear {
+    0% {opacity: 1;z-index:1000;}
+    60%{opacity: 1;z-index:1000;}
+    100% {opacity: 0;z-index:1000;}
+}
+
+@-webkit-keyframes appear {
+    0% {opacity: 1;z-index:1000;}
+    60%{opacity: 1;z-index:1000;}
+    100% {opacity: 0;z-index:1000;}
+}
+
+@keyframes up {
+    0%{top:95%}
+    100%{top:50%}
+}
+@-webkit-keyframes up {
+    0%{top:95%}
+    100%{top:50%}
+}
+@keyframes down {
+    0%{top:50%}
+    100%{top:95%}
+}
+@-webkit-keyframes down {
+    0%{top:50%}
+    100%{top:95%}
+}
+@keyframes upp {
+    0%{margin-top:0}
+    100%{margin-top:-25%}
+}
+@-webkit-keyframes upp {
+    0%{margin-top:0}
+    100%{margin-top:-25%}
+}
+@-webkit-keyframes downn {
+    0%{margin-top:-25%}
+    100%{margin-top:0}
+}
+@keyframes downn {
+    0%{margin-top:-25%}
+    100%{margin-top:0}
+}
+@keyframes rot1 {
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(180deg)}
+}
+@-webkit-keyframes rot1 {
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(180deg)}
+}
+@-webkit-keyframes rot2 {
+    0%{transform:rotate(180deg)}
+    100%{transform:rotate(360deg)}
+}
+@keyframes rot2 {
+    0%{transform:rotate(180deg)}
+    100%{transform:rotate(360deg)}
+}
+
+        #panel {
+            position: fixed;
+            background-color: white;
+            max-height: 90%;
+            overflow-y: auto;
+            top: 10px;
+            right: 10px;
+            width: 280px;
+        }
+        #result1{
+            position: absolute;
+            width: 100%;
+            height: 90%;
+            top: 10%;
+        }

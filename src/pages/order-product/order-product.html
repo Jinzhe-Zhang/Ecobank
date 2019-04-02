@@ -1,0 +1,51 @@
+<!--
+  Generated template for the OrderProduct page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <span style="font-size:24px">Order Product</span>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="background-color: #3578e9">
+  <ion-list no-lines style="background-color:#3578e9">
+    <ion-item style="background-color:#3578e9">
+      <h1 style="color: whitesmoke;text-align: center;margin-left:10px;margin-top:7px;font-size: 6vw;">Check and fill your order!</h1>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+
+    <ion-item>
+      <ion-label>Product ID: {{product.product_id}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Purchase Entry: {{product.purchase_entry}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hold Time: {{product.hold_time}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Earning Rate: {{product.earning_rate}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Risk Type: {{product.risk_type}}</ion-label>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary" stacked>Hold Investigation</ion-label>
+      <ion-input placeholder="money" [(ngModel)]="money" ></ion-input>
+    </ion-item>
+    <ion-item style="margin-top: 7%;">
+      <button ion-button style="width: 40%;left:7%;position: absolute;bottom: 20%;height:30px;" color="Secondary" (click)="buyProduct(product.product_id, money)">CONFIRM</button>
+      <button ion-button style="width: 40%;right:7%;position: absolute;bottom: 20%;height:30px;" color="light" (click)="cancel()">CANCEL</button>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <span style="font-size:24px">&nbsp;&nbsp;&nbsp;Balance</span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style="background-color:#3578e9">
+    <ion-list padding>  
+      <ion-item>
+        <ion-label>
+          Card
+        </ion-label>
+        <ion-select [(ngModel)]="selectCardNum" (ionChange) = "cardSelectChanged()">
+          <ion-option selected = "true" value = "all">All</ion-option>
+          <ion-option *ngFor="let card of cards;let i = index" value = "{{card.card_num}}"> {{ star_format(card.card_num) }} </ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <h2>Card: {{ star_format(selectCardNum)}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+		<ion-label>Bank: {{bankName.toUpperCase()}}</ion-label>
+		<ion-label>Total Asset: {{asset}}</ion-label>
+		<ion-label>Deposit:&nbsp;&nbsp;&nbsp;&nbsp; {{deposit}}</ion-label>
+		<ion-label>Overdraft:&nbsp;&nbsp; {{overdraft}}</ion-label>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

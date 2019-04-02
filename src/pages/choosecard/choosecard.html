@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <span style="font-size:24px">Choose Card</span>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background-color: #3578e9">
+  <ion-item>
+    <h2>Cost of savings: {{amount_paid}} RMB</h2>
+	<h2>Choose a card of {{bankname}} BANK</h2>
+  </ion-item>
+	<ion-item *ngFor="let card of cards">
+		<ion-label (click)="pay(card.card_num)">
+			{{card.card_num}}
+		</ion-label>
+    </ion-item>
+	
+</ion-content>

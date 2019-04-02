@@ -1,0 +1,40 @@
+page-me {
+    #cardlist-fold,#productlist-fold,#myactivitieslist-fold{
+        visibility: hidden;
+        height: 0;
+    }
+    #cardlist-deploy,#productlist-deploy,#myactivitieslist-deploy{
+    }
+.actvity ion-label:first-letter
+{  
+font-size:xx-large ;
+font-weight: bold;/* 
+background-color: greenyellow; */
+color: white;
+border-radius: 19px ;
+padding:  0 8.7px;
+} 
+.myactivitieslist:nth-child(3n+2)>.actvity ion-label:first-letter 
+{
+background-color: greenyellow;
+} 
+.myactivitieslist:nth-child(3n+1)>.actvity ion-label:first-letter
+{
+background-color: purple;
+}
+.myactivitieslist:nth-child(3n)>.actvity ion-label:first-letter
+{
+background-color: orange;
+}
+.process{
+    margin-top: -10px;
+    background-color: white;
+}
+.processcontainer{
+    border: 5px solid yellow;
+    border-radius:25px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+}
+}

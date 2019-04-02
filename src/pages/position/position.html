@@ -1,0 +1,35 @@
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.1&key=a8630552b8a2e2df778c095d8539fd37&plugin=AMap.Transfer"></script>
+<ion-header>
+  <ion-navbar>
+    <span style="font-size:24px">Recommend</span>
+    <!--<ion-buttons right>
+      <button ion-button (color)="light" icon-left (click)="To_Rec()">Get</button>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="maincontent" style="background-color:#3578e9">
+<!--
+	<div align="center" style="background-color:#3578e9;margin:0px 15px 0px 15px">
+	  <button ion-button full color="light" (click)="To_Rec()">Get Recommendation<[表情]tton>
+	</div>
+	<div align="center" style="background-color:#3578e9;margin:0px 15px 0px 15px">
+	  <button ion-button full color="light" (click)="getmap()">Get Position<[表情]tton>
+	</div>
+	<div id="Bmap" style="height: 220px;margin:12px 15px 12px 15px;background-color:#3578e9"></div>
+	-->
+	<div id="Amap" style="height: 95%;width:100%;position:relative">
+    <div  align="center" style= "position:absolute;z-index:999;width:90%;bottom:1%;margin-left:5%;display:block;border-radius:15px;background-color:transparent">
+<!--     <button ion-button round full color="light" (click)="To_Rec()">Recommendation</button> -->
+  </div>
+  </div>
+<div id="btm">
+  <div id="btm1" (click)="Btm1click()">
+    <div id="btm2">
+    <img src="assets/img/arrow1.png">
+    </div>
+  </div>
+  <ion-scroll id="result1"></ion-scroll> 
+</div>
+
+</ion-content>

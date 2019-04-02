@@ -1,0 +1,31 @@
+page-activity {
+h1,h1>b{
+    text-align: center;
+    color: white;
+}
+#details{
+padding: 7vw 5vw;
+background-color: #3578e9;
+}
+ul{
+    padding-left: 0;
+    background-color: white;
+    border-radius: 2vw;
+}
+li{
+    line-height: 5vh;
+    list-style-type: none;
+    font-size: 4vw;
+    margin:0 10vw;
+}
+p{
+    text-align: justify;
+}
+ion-col{
+  background-color: #F9FAFB;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  text-align: center;
+}
+}

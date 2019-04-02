@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <span style="font-size:24px">Details</span>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+		<div style="float:center;" id="imgdiv">
+			<img src={{photo}} />
+		</div>
+		<h2 style="text-align:center"> {{name}} </h2>
+		<hr/>
+		<h3><b>Distance:</b> {{distance}} m</h3>
+		<h3><b>Merchant Tel:</b> {{tel}}</h3>
+		<h3><b>Merchant Address:\n</b> {{address}}</h3>
+		<h3><b>Discount:</b> </h3>
+		<h3>ORANGE BANK</h3>
+		<h3 *ngIf="orange_num==0"style="color: gray;">No Discount!</h3>
+		<div *ngFor="let pri of privileges;let i = index">
+			<h3 *ngIf="pri.bank_name=='ORANGE'&&pri.privilege_type == 1" style="color:red">Buy {{pri.detail1}} RMB get {{pri.detail2}} RMB reduction </h3>
+			<h3 *ngIf="pri.bank_name=='ORANGE'&&pri.privilege_type == 2" style="color:red">{{pri.detail2*100}}% off once purchase up to {{pri.detail1}} RMB</h3>
+			<h3 *ngIf="pri.bank_name=='ORANGE'&&pri.privilege_type == 2" style="color:red">Get {{pri.detail3}} RMB reduction at most</h3>
+		</div>
+		<h3>COCONUT BANK</h3>
+		<h3 *ngIf="coconut_num==0" style="color: gray;">No Discount!</h3>
+		<div *ngFor="let pri of privileges;let i = index">
+			<h3 *ngIf="pri.bank_name=='COCONUT'&&pri.privilege_type == 1" style="color:red">Buy {{pri.detail1}} RMB get {{pri.detail2}} RMB reduction </h3>
+			<h3 *ngIf="pri.bank_name=='COCONUT'&&pri.privilege_type == 2" style="color:red">{{pri.detail2*100}}% off once purchase up to {{pri.detail1}} RMB</h3>
+			<h3 *ngIf="pri.bank_name=='COCONUT'&&pri.privilege_type == 2" style="color:red">Get {{pri.detail3}} RMB reduction at most</h3>
+		</div>
+		<button ion-button class="button button-full button-positive" style="width:50%;margin:10px;margin-left:25%;" (click)="jump();">Go there!</button>
+  </ion-card>
+</ion-content>
